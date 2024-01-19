@@ -1,4 +1,56 @@
 body {
-    background-color: darksalmon;
-    background-image: url("https://www.google.ca/url?sa=i&url=https%3A%2F%2Fgifer.com%2Fen%2FBUhB&psig=AOvVaw1ZA0gbPUNXyecdzE9HGt08&ust=1705782247598000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjB4Juk6oMDFQAAAAAdAAAAABAI");
+    background-color: rgb(57, 8, 97)22, 233); 
+    background-image: url("https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6uQ9zrc8aff0Tz4qnvwHJG/2a59e37ea2de7d60722d947b1bbe1ee3/project-u-background.gif");
+    /* ~Thx for the image Ubisoft UK ;) -- stolen from google images*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* The width and height solution to my bg image problem (didn't cover full viewport)
+    was solved with the two lines below via article by log rocket
+    https://blog.logrocket.com/css-full-page-background/*/
+    width: 100vw;
+    height: 100vh;
+    /**/
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h1 {
+    text-align: center;
+    color: whitesmoke;
+    margin-top: 5vh;
+    padding-bottom: 20px;
+}
+
+hr {
+    margin-right: 10%; 
+    margin-left: 10%;
+}
+
+/* learned about a tag states via w3Schools tutorial docs
+https://www.w3docs.com/snippets/css/how-to-change-link-colors-in-html.html*/
+
+
+a {
+    color: rgb(192, 202, 247);
+}
+
+a:hover {
+    color: rgb(147, 164, 238);
+}
+
+a:visited:hover{
+    color: rgb(93, 104, 151);
+}
+
+a:visited {
+    color: rgb(138, 145, 177);
+}
+/**/
+
+.schoolWork {
+    color: whitesmoke;
+    padding-top: 20px;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: left;
 }
