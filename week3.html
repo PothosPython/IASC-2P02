@@ -5,12 +5,28 @@
 
     <!-- CSS -->
     <link rel = "stylesheet" href = "style.css">
+    
+    <!-- three.js importmap-->
+    <script type = "importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js"
+            
+            }
+        }
+    </script>
+    <!-- JSPM website: https://jspm.org/getting-started-->
+
+    <!-- three.js Scene-->
+    <script src = "script.js" type = "module"></script>
 </header>
 
 <body>
     <h1>Week 3 - First Scene</h1>
 
     <hr>
+
+    <canvas class = "webgl"></canvas>
 
     <div class = "schoolWork">
         <p>

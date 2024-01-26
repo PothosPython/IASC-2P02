@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(57, 8, 97)22, 233); 
+    background-color: rgb(57, 8, 97); 
     background-image: url("https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6uQ9zrc8aff0Tz4qnvwHJG/2a59e37ea2de7d60722d947b1bbe1ee3/project-u-background.gif");
     /* ~Thx for the image Ubisoft UK ;) -- stolen from google images*/
     background-position: center center;
@@ -53,4 +53,12 @@ a:visited {
     margin: 0 auto;
     width: fit-content;
     text-align: left;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1;
 }
