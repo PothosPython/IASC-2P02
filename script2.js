@@ -61,7 +61,7 @@ controls.enableDamping = true
  scene.add(plane)
 
  // shape
- const shapeGeometry = new THREE.SphereGeometry(1)
+ const shapeGeometry = new THREE.BoxGeometry(1)
  const shapeMaterial = new THREE.MeshPhysicalMaterial({
     roughness: 0.0,
     color: 0xF7A072,
@@ -70,7 +70,7 @@ controls.enableDamping = true
     thickness: 1.0
 })
  const shape = new THREE.Mesh (shapeGeometry, shapeMaterial)
-
+ shape.rotateX(90).rotateY(180).rotateZ(270)
  scene.add(shape)
 
 /********
@@ -95,7 +95,7 @@ shapeFolder
 
 shapeFolder
     .add(uiObject, 'play')
-    .name('Animate sphere')
+    .name('Animate')
 
 /********************
  ** ANIMATION LOOP **
