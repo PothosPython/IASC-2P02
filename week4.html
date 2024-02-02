@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<header>
+    <title>IASC 2P02 - Liv Rowbottom - Week 4</title>
+
+    <!-- CSS -->
+    <link rel = "stylesheet" href = "style.css">
+    
+    <!-- three.js importmap-->
+    <script type = "importmap">
+        {
+            "imports": {
+                "three": "https://ga.jspm.io/npm:three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://ga.jspm.io/npm:three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.19.1/dist/lil-gui.esm.js"
+            }
+        }
+    </script>
+    <!-- JSPM website: https://jspm.org/getting-started-->
+
+    <!-- three.js Scene-->
+    <script src = "script2.js" type = "module"></script>
+</header>
+
+<body>
+    <h1>Week 4 - Flatlands</h1>
+
+    <hr>
+
+    <canvas class="webgl"></canvas>
+
+    <div class = "schoolWork">
+        <h2>Specifications</h2>
+        <ul>
+            <li>The scene must contain a plane mesh. The plane must appear as a wireframe when the page 
+                first loads.</li>
+            <li>The scene must contain a mesh that intersects the plane (for example, a sphere, cube, torus, 
+                etc.).</li>
+            <li>The scene must contain working OrbitControls.</li>
+            <li>The scene must contain a working UI using lil-gui. This UI must let the user change the position of the mesh that intersects the plane.</li>
+        </ul>
+        <p>Challenges:
+                1. add a rotation toggle (on/off + speed slider)
+                2. come up w/ your own flatland scene to tell a story
+        </p>
+    </div>
+
+</body>

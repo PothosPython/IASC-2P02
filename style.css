@@ -1,16 +1,9 @@
 body {
     background-color: rgb(57, 8, 97); 
     background-image: url("https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/6uQ9zrc8aff0Tz4qnvwHJG/2a59e37ea2de7d60722d947b1bbe1ee3/project-u-background.gif");
-    /* ~Thx for the image Ubisoft UK ;) -- stolen from google images*/
-    background-position: center center;
+    /* ~Thx for the image Ubisoft UK ;) -- procured from google images*/
     background-repeat: no-repeat;
     background-size: cover;
-    /* The width and height solution to my bg image problem (didn't cover full viewport)
-    was solved with the two lines below via article by log rocket
-    https://blog.logrocket.com/css-full-page-background/*/
-    width: 100vw;
-    height: 100vh;
-    /**/
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
