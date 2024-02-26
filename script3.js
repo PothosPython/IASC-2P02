@@ -36,6 +36,7 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas
 })
 renderer.setSize(sizes.width, sizes.height)
+renderer.shadowMap.enabled = true
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
@@ -45,8 +46,8 @@ controls.enableDamping = true
  ** MESHES **
  ************/
 
- const caveMaterial = new THREE.MeshBasicMaterial({
-    color: new THREE.Color('white'),
+ const caveMaterial = new THREE.MeshStandardMaterial({
+    color: new THREE.Color(0x748CAB),
     side: THREE.DoubleSide
  })
 
@@ -55,6 +56,7 @@ const caveWallGeometry = new THREE.PlaneGeometry(10, 5)
 const caveWall = new THREE.Mesh(caveWallGeometry, caveMaterial)
 caveWall.rotation.y = Math.PI * .5
 caveWall.position.set(-5, 0, 0)
+caveWall.receiveShadow = true
 scene.add(caveWall)
 
 // barrierWall
@@ -65,19 +67,75 @@ barrierWall.position.set(5, -1.5, 0)
 scene.add(barrierWall)
 
 // caveFloor
-
 const caveFloorGeometry = new THREE.PlaneGeometry(10, 10)
 const caveFloor = new THREE.Mesh(caveFloorGeometry, caveMaterial)
 caveFloor.rotation.x = Math.PI * .5
 caveFloor.position.set(0, -2.5, 0)
+caveFloor.receiveShadow = true
 scene.add(caveFloor)
 
+// OBJECTS
+// torusKnot
+const torusKnotGeometry = new THREE.TorusKnotGeometry(1, 0.2)
+const torusKnotMaterial = new THREE.MeshNormalMaterial()
+const torusKnot = new THREE.Mesh(torusKnotGeometry, torusKnotMaterial)
+torusKnot.position.set(6, 1.5, 0)
+torusKnot.castShadow = true
+scene.add(torusKnot)
+
+/************
+ ** LIGHTS **
+ ************/
+
+// Directional Light
+ const directionalLight = new THREE.DirectionalLight(
+    new THREE.Color ('white'),
+    0.5
+)
+directionalLight.target = torusKnot
+directionalLight.position.set(10, 2, 0)
+directionalLight.castShadow = true
+scene.add(directionalLight)
+
+// Directional Light Helper
+//const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight)
+//scene.add(directionalLightHelper)
 
 /********
  ** UI **
  ********/
 // UI
 const ui = new dat.GUI()
+
+const uiObject = {}
+
+uiObject.reset = () =>{
+    directionalLight.position.set(10, 2, 0)
+}
+
+// Directional Light
+const lightPositionFolder = ui.addFolder('Directional Light Position')
+lightPositionFolder
+    .add(directionalLight.position, 'x')
+    .min(-10)
+    .max(20)
+    .step(0.05)
+
+lightPositionFolder
+    .add(directionalLight.position, 'y')
+    .min(0.5)
+    .max(10)
+    .step(0.01)
+
+lightPositionFolder
+    .add(directionalLight.position, 'z')
+    .min(-4)
+    .max(4.5)
+    .step(0.01)
+
+lightPositionFolder
+    .add(uiObject, 'reset')
+    .name('Reset Position')
 
 
 /********************
@@ -90,7 +148,13 @@ const ui = new dat.GUI()
     // Return elapsedTime
     const elaTime = clock.getElapsedTime()
 
-    // ***** ANIMATE shape ******
+    // ***** ANIMATE objects ******
+    torusKnot.rotation.x = elaTime
+    torusKnot.rotation.y = elaTime
+    torusKnot.position.z = Math.sin(elaTime*.5) * 1.5
+
+    // Update directionalLightHelper
+    //directionalLightHelper.update()
 
     // Controls
     controls.update()
