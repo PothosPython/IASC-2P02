@@ -45,13 +45,32 @@ controls.enableDamping = true
  ** MESHES **
  ************/
 
- // Plane
- const geometry = new THREE.PlaneGeometry(5, 5)
- const material = new THREE.MeshNormalMaterial()
- const plane = new THREE.Mesh(geometry, material)
+ const caveMaterial = new THREE.MeshBasicMaterial({
+    color: new THREE.Color('white'),
+    side: THREE.DoubleSide
+ })
 
- //plane.position.set(0, 0, -5)
- scene.add(plane)
+// caveWall
+const caveWallGeometry = new THREE.PlaneGeometry(10, 5)
+const caveWall = new THREE.Mesh(caveWallGeometry, caveMaterial)
+caveWall.rotation.y = Math.PI * .5
+caveWall.position.set(-5, 0, 0)
+scene.add(caveWall)
+
+// barrierWall
+const barrierWallGeometry = new THREE.PlaneGeometry(10, 2)
+const barrierWall = new THREE.Mesh(barrierWallGeometry, caveMaterial)
+barrierWall.rotation.y = Math.PI * .5
+barrierWall.position.set(5, -1.5, 0)
+scene.add(barrierWall)
+
+// caveFloor
+
+const caveFloorGeometry = new THREE.PlaneGeometry(10, 10)
+const caveFloor = new THREE.Mesh(caveFloorGeometry, caveMaterial)
+caveFloor.rotation.x = Math.PI * .5
+caveFloor.position.set(0, -2.5, 0)
+scene.add(caveFloor)
 
 
 /********
