@@ -33,7 +33,8 @@ scene.add(camera)
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    antialias: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.shadowMap.enabled = true
@@ -95,6 +96,8 @@ scene.add(torusKnot)
 directionalLight.target = torusKnot
 directionalLight.position.set(10, 2, 0)
 directionalLight.castShadow = true
+directionalLight.shadow.mapSize.width = 1080
+directionalLight.shadow.mapSize.height = 1080
 scene.add(directionalLight)
 
 // Directional Light Helper
