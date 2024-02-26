@@ -28,7 +28,7 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     100
 )
-camera.position.set(2, 2, 4)
+camera.position.set(5.6, 2.3, 7)
 scene.add(camera)
 
 // Renderer
@@ -38,6 +38,7 @@ const renderer = new THREE.WebGLRenderer({
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.shadowMap.enabled = true
+renderer.shadowMap.type = THREE.PCESoftShadowMap
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
